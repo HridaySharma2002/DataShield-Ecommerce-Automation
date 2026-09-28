@@ -1,0 +1,19 @@
+# Target & Build directory
+target/
+*.class
+
+# Execution Reports & Logs
+test-output/
+*.log
+
+# IDE files
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
