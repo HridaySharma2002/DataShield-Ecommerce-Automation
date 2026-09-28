@@ -170,14 +170,3 @@ Every automated test case captures high-resolution screenshots verifying success
 | **DB Validation** | `testUserAccountDatabaseStateBeforeLogin` | [`testUserAccountDatabaseStateBeforeLogin_PASSED.png`](screenshots/testUserAccountDatabaseStateBeforeLogin_PASSED.png) | `SELECT * FROM USERS WHERE email = ?` |
 | **DB Validation** | `testOrderCreationWithDatabaseVerification` | [`testOrderCreationWithDatabaseVerification_PASSED.png`](screenshots/testOrderCreationWithDatabaseVerification_PASSED.png) | `SELECT * FROM ORDERS WHERE order_id = ?` |
 | **DB Validation** | `testInventoryStockDeductionAfterPurchase` | [`testInventoryStockDeductionAfterPurchase_PASSED.png`](screenshots/testInventoryStockDeductionAfterPurchase_PASSED.png) | `SELECT stock_quantity FROM PRODUCTS` |
-
-## 📄 Bullet Points to Add to Your Resume
-
-You can add this project directly to your resume under **PROJECTS**:
-
-```text
-DataShield - Enterprise E-Commerce Automation & SQL DB Validation Framework | Java 21, Selenium, TestNG, JDBC, Extent Reports
-• Engineered an end-to-end Test Automation Framework using Java 21, Selenium WebDriver, and Page Object Model (POM) to automate complex e-commerce workflows.
-• Integrated JDBC SQL database assertions (H2/MySQL) to cross-validate UI order placements, user status, and product stock levels directly against backend database records.
-• Configured modular TestNG test suites (Smoke, Functional, Regression, DB Validation) with Extent Reports for interactive HTML execution logs and automated failure screenshots.
-```
