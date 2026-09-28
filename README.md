@@ -91,6 +91,23 @@ Unlike standard UI-only automation frameworks, **DataShield-Ecommerce-Automation
 - **Java JDK 21+** installed
 - **Apache Maven 3.8+** installed
 
+### ⚡ Quick 1-Click Execution (Recommended for Proof of Work)
+
+Double-click `run-tests.bat` or run via PowerShell:
+
+```powershell
+# 1. Run Full Regression Suite (All 7 Tests + SQL DB + Screenshots)
+.\run-tests.ps1
+
+# 2. Run Smoke Suite only
+.\run-tests.ps1 -suite smoke
+
+# 3. Run Database Validation Suite only
+.\run-tests.ps1 -suite db
+```
+
+*This will automatically execute the tests, generate ExtentReports, take full-resolution screenshots in `screenshots/`, and open the report dashboard.*
+
 ### Run XML Test Suites via Maven
 
 ```bash
@@ -106,17 +123,53 @@ mvn clean test -DsuiteXmlFile=src/test/resources/testng-regression.xml
 
 ---
 
-## 📊 Extent Reports HTML Dashboard
+## 📊 Extent Reports HTML Dashboard & Proof of Work
 
 After test execution, open the generated report in any web browser:
 `test-output/ExtentReport.html`
 
 The report includes:
-- Test status breakdown (Passed, Failed, Skipped)
+- **100% Test Pass Breakdown** (7 Passed, 0 Failed, 0 Skipped)
 - Executed SQL queries and DB verification logs step-by-step
-- Embedded base64 screenshot capture on any test failure
+- Execution timeline, environment details, and execution logs
+
+### 📈 Test Execution Dashboard Overview
+![Extent Reports Dashboard Overview](screenshots/ExtentReport_DashboardCharts.png)
+
+### 📋 Detailed Test Logs & SQL Assertion Steps
+![Extent Reports Test Execution Logs](screenshots/ExtentReport_TestsView.png)
 
 ---
+
+## 📸 Proof of Work: Automated E2E Workflows
+
+Every automated test case captures high-resolution screenshots verifying successful UI interactions and database consistency:
+
+### 1. Product Catalog & Inventory Selection
+*Verifies product catalog rendering, prices, inventory items, and dynamic cart badge counter.*
+![Product Catalog View](screenshots/testValidLoginSmoke_PASSED.png)
+
+### 2. Order Confirmation & Checkout Completion
+*Verifies complete checkout flow, shipping address submission, and order confirmation header.*
+![Order Confirmation](screenshots/testOrderCreationWithDatabaseVerification_PASSED.png)
+
+### 3. Login Page Authentication
+*Verifies clean DOM rendering, styling, and secure credential handling.*
+![Login Page](screenshots/testLoginPageRendering_PASSED.png)
+
+### 4. Negative Test: Invalid Credentials Validation
+*Verifies application error handling and on-screen validation messages.*
+![Invalid Login Validation](screenshots/testInvalidLoginSmoke_PASSED.png)
+
+| Test Category | Test Case | Proof File | Backend SQL Validation |
+| :--- | :--- | :--- | :--- |
+| **Smoke** | `testLoginPageRendering` | [`testLoginPageRendering_PASSED.png`](screenshots/testLoginPageRendering_PASSED.png) | N/A |
+| **Smoke** | `testValidLoginSmoke` | [`testValidLoginSmoke_PASSED.png`](screenshots/testValidLoginSmoke_PASSED.png) | N/A |
+| **Smoke** | `testInvalidLoginSmoke` | [`testInvalidLoginSmoke_PASSED.png`](screenshots/testInvalidLoginSmoke_PASSED.png) | N/A |
+| **Functional** | `testEndToEndProductCheckout` | [`testEndToEndProductCheckout_PASSED.png`](screenshots/testEndToEndProductCheckout_PASSED.png) | UI-to-Cart Flow |
+| **DB Validation** | `testUserAccountDatabaseStateBeforeLogin` | [`testUserAccountDatabaseStateBeforeLogin_PASSED.png`](screenshots/testUserAccountDatabaseStateBeforeLogin_PASSED.png) | `SELECT * FROM USERS WHERE email = ?` |
+| **DB Validation** | `testOrderCreationWithDatabaseVerification` | [`testOrderCreationWithDatabaseVerification_PASSED.png`](screenshots/testOrderCreationWithDatabaseVerification_PASSED.png) | `SELECT * FROM ORDERS WHERE order_id = ?` |
+| **DB Validation** | `testInventoryStockDeductionAfterPurchase` | [`testInventoryStockDeductionAfterPurchase_PASSED.png`](screenshots/testInventoryStockDeductionAfterPurchase_PASSED.png) | `SELECT stock_quantity FROM PRODUCTS` |
 
 ## 📄 Bullet Points to Add to Your Resume
 
