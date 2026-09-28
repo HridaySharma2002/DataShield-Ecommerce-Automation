@@ -10,6 +10,13 @@
     <name>DataShield E-Commerce &amp; DB Validation Automation Framework</name>
     <description>Hybrid Test Automation Framework integrating Selenium WebDriver, TestNG, JDBC SQL Database Assertions, and Extent Reports</description>
 
+    <repositories>
+        <repository>
+            <id>central-repo1</id>
+            <url>https://repo1.maven.org/maven2</url>
+        </repository>
+    </repositories>
+
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
@@ -89,7 +96,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
+                <version>3.1.2</version>
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>

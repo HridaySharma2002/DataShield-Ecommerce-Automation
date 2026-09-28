@@ -5,6 +5,16 @@
 
 ---
 
+## 📊 Interactive Extent Reports Dashboard & Architecture
+
+### 1. Test Execution & SQL DB Validation Report
+![Extent Reports HTML Execution Dashboard](docs/images/extent_report_dashboard.jpg)
+
+### 2. End-to-End Automation Framework Architecture
+![DataShield Framework Architecture](docs/images/framework_architecture.jpg)
+
+---
+
 ## 🎯 Framework Purpose & Features
 This framework is engineered as a production-grade SDET portfolio project to demonstrate end-to-end web UI automation seamlessly integrated with backend SQL database testing:
 
